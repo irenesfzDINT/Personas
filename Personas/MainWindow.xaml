@@ -5,8 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Personas"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Personas"
+        Icon="assets/personas.ico"
+        Height="450"
+        Width="800">
+    <Window.Resources>
+        <!--Estilo botones-->
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Margin"
+                    Value="8"></Setter>
+            <Setter Property="Width"
+                    Value="150"></Setter>
+        </Style>
+    </Window.Resources>
+    <DockPanel>
+        <StackPanel Orientation="Horizontal"
+                    DockPanel.Dock="Top">
+            <Button>Nueva persona</Button>
+            <Button>Listado de personas</Button>
+        </StackPanel>
+        <Border BorderThickness="2"
+                BorderBrush="Black"
+                Margin="8,0,8,8">
+            <StackPanel>
+
+            </StackPanel>
+        </Border>
+    </DockPanel>
 </Window>
