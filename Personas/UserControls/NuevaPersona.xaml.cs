@@ -13,17 +13,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Personas
+namespace Personas.UserControls
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para NuevaPersona.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class NuevaPersona : UserControl
     {
-        MainWindowVM vm;
-        public MainWindow()
+        private NuevaPersonaVM vm;
+        public NuevaPersona()
         {
-            vm = new MainWindowVM();
+            vm = new NuevaPersonaVM();
             InitializeComponent();
             this.DataContext = vm;
         }

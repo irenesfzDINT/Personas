@@ -10,22 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Personas
+namespace Personas.Ventanas
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para DialogoNacionalidad.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class DialogoNacionalidad : Window
     {
-        MainWindowVM vm;
-        public MainWindow()
+        public DialogoNacionalidad()
         {
-            vm = new MainWindowVM();
             InitializeComponent();
-            this.DataContext = vm;
         }
     }
 }
