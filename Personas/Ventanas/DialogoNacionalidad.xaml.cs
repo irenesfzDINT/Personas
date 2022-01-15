@@ -23,5 +23,10 @@ namespace Personas.Ventanas
         {
             InitializeComponent();
         }
+
+        private void AceptarButton_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+        }
     }
 }

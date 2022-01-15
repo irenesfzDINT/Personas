@@ -24,7 +24,9 @@
         <TextBox Margin="5"></TextBox>
         <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Right">
-            <Button IsDefault="False">Aceptar</Button>
+            <Button x:Name="AceptarButton"
+                    Click="AceptarButton_Click"
+                    IsDefault="True">Aceptar</Button>
             <Button IsCancel="True">Cancelar</Button>
         </StackPanel>
     </StackPanel>
