@@ -1,11 +1,12 @@
 ﻿<UserControl x:Class="Personas.UserControls.NuevaPersona"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:Personas"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             mc:Ignorable="d"
+             d:DesignHeight="450"
+             d:DesignWidth="800">
     <StackPanel Margin="10">
         <TextBlock>Nombre</TextBlock>
         <TextBox></TextBox>
@@ -13,8 +14,14 @@
         <TextBox></TextBox>
         <TextBlock>Nacionalidad</TextBlock>
         <StackPanel Orientation="Horizontal">
-            <TextBox Width="80"></TextBox>
-            <Button>+</Button>
+            <ComboBox ItemsSource="{Binding Path=Nacionalidades}"
+                      Width="100">
+            </ComboBox>
+            <Button Margin="5,0,0,0"
+                    Width="20"
+                    Content=" + "
+                    Command="{Binding Path=AddNacionalidadCommand}"></Button>
         </StackPanel>
+        <Button Width="150">Aceptar</Button>
     </StackPanel>
 </UserControl>

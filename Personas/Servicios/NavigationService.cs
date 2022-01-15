@@ -1,4 +1,5 @@
 ﻿using Personas.UserControls;
+using Personas.Ventanas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,12 @@ namespace Personas.Servicios
 {
     class NavigationService
     {
-        public UserControl AbrirUC1() 
+        public void AbrirDialogoNacionalidad()
+        {
+            DialogoNacionalidad dialogo = new DialogoNacionalidad();
+            dialogo.ShowDialog();
+        }
+        public UserControl AbrirUC1()
         {
             return new NuevaPersona();
         }

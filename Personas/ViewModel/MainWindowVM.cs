@@ -3,13 +3,13 @@ using Microsoft.Toolkit.Mvvm.Input;
 using Personas.Servicios;
 using System.Windows.Controls;
 
-namespace Personas
+namespace Personas.ViewModel
 {
     class MainWindowVM : ObservableObject
     {
         public RelayCommand AbrirUC1Command { get; }
         public RelayCommand AbrirUC2Command { get; }
-        private NavigationService servicio;
+        private readonly NavigationService servicio;
         private UserControl opcion;
         public UserControl Opcion
         {
