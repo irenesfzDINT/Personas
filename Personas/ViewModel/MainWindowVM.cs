@@ -1,10 +1,6 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Personas.Servicios;
 using System.Windows.Controls;
 
 namespace Personas
@@ -13,7 +9,7 @@ namespace Personas
     {
         public RelayCommand AbrirUC1Command { get; }
         public RelayCommand AbrirUC2Command { get; }
-        private readonly NavigationService servicio;
+        private NavigationService servicio;
         private UserControl opcion;
         public UserControl Opcion
         {
