@@ -11,6 +11,7 @@ namespace Personas.Servicios
 {
     class NavigationService
     {
+        ListadoPersonas lista = new ListadoPersonas();
         public void AbrirDialogoNacionalidad()
         {
             DialogoNacionalidad dialogo = new DialogoNacionalidad();
@@ -22,7 +23,7 @@ namespace Personas.Servicios
         }
         public UserControl AbrirUC2()
         {
-            return new ListadoPersonas();
+            return lista;
         }
     }
 }
