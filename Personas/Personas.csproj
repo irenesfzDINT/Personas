@@ -93,6 +93,7 @@
     <Compile Include="Ventanas\DialogoNacionalidad.xaml.cs">
       <DependentUpon>DialogoNacionalidad.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\DatosPersonaVM.cs" />
     <Compile Include="ViewModel\DialogoNacionalidadVM.cs" />
     <Compile Include="ViewModel\ListadoPersonasVM.cs" />
     <Compile Include="ViewModel\NuevaPersonaVM.cs" />

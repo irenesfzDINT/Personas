@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Personas.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace Personas.UserControls
     /// </summary>
     public partial class DatosPersona : UserControl
     {
+        DatosPersonaVM vm;
         public DatosPersona()
         {
+            vm = new DatosPersonaVM();
             InitializeComponent();
+            this.DataContext = vm;
         }
     }
 }

@@ -74,7 +74,6 @@ namespace Personas.ViewModel
             {
                 Nacionalidades.Add(personas[i].Nacionalidad);
             }
-
         }
 
         private void NuevaPersona()

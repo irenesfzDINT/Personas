@@ -14,6 +14,14 @@ namespace Personas.ViewModel
     class ListadoPersonasVM : ObservableRecipient
     {
         private readonly PersonaService servicio = new PersonaService();
+        private Persona personaSeleccionada;
+
+        public Persona PersonaSeleccionada
+        {
+            get { return personaSeleccionada; }
+            set { SetProperty(ref personaSeleccionada, value); }
+        }
+
         private ObservableCollection<Persona> personas;
         public ObservableCollection<Persona> Personas
         {
@@ -22,6 +30,10 @@ namespace Personas.ViewModel
         }
         public ListadoPersonasVM()
         {
+            //cuando selecciona persona
+            WeakReferenceMessenger.Default.Send(
+                new PersonaSeleccionadaModificadaMessage(PersonaSeleccionada));
+
             Personas = servicio.ObtenerDatos();
             WeakReferenceMessenger.Default.Register<NuevaPersonaModificadaMessage>(this, (r, m) =>
             {
