@@ -21,13 +21,10 @@
     </UserControl.Resources>
     <StackPanel>
         <TextBlock>Nombre</TextBlock>
-        <TextBox x:Name="NombreTextBox"
-                 Text="{Binding Path=Nombre}"></TextBox>
+        <TextBox Text="{Binding Path=Nombre}"></TextBox>
         <TextBlock>Edad</TextBlock>
-        <TextBox x:Name="EdadTextBox"
-                 Text="{Binding Path=Edad}"></TextBox>
+        <TextBox Text="{Binding Path=Edad}"></TextBox>
         <TextBlock>Nacionalidad</TextBlock>
-        <TextBox x:Name="NacionalidadTextBox"
-                 Text="{Binding Path=Nacionalidad}"></TextBox>
+        <TextBox Text="{Binding Path=Nacionalidad}"></TextBox>
     </StackPanel>
 </UserControl>

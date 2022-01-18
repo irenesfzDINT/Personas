@@ -32,15 +32,13 @@ namespace Personas.ViewModel
             get { return nacionalidad; }
             set { SetProperty(ref nacionalidad, value); }
         }
+
         public DatosPersonaVM()
         {
-            WeakReferenceMessenger.Default.Register<PersonaSeleccionadaModificadaMessage>(this, (r, m) =>
-            {
-                Persona p = m.Value;
-                Nombre = p.Nombre;
-                Edad = p.Edad;
-                Nacionalidad = p.Nacionalidad;
-            });
+            Persona p = WeakReferenceMessenger.Default.Send<PersonaSeleccionadaRequestMessage>();
+            Nombre = p.Nombre;
+            Edad = p.Edad;
+            Nacionalidad = p.Nacionalidad;
         }
     }
 }

@@ -18,9 +18,6 @@ namespace Personas.Clases
         {
             public NuevaPersonaModificadaMessage(Persona persona) : base(persona) { }
         }
-        public class PersonaSeleccionadaModificadaMessage : ValueChangedMessage<Persona>
-        {
-            public PersonaSeleccionadaModificadaMessage(Persona persona) : base(persona) { }
-        }
+        public class PersonaSeleccionadaRequestMessage : RequestMessage<Persona> { }
     }
 }
