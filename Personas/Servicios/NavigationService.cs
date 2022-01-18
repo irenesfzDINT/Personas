@@ -11,8 +11,7 @@ namespace Personas.Servicios
 {
     class NavigationService
     {
-        ListadoPersonas lista = new ListadoPersonas();
-        //NuevaPersona nuevaPersona = new NuevaPersona();
+        readonly ListadoPersonas lista = new ListadoPersonas();
         public void AbrirDialogoNacionalidad()
         {
             DialogoNacionalidad dialogo = new DialogoNacionalidad();

@@ -19,12 +19,15 @@
     </UserControl.Resources>
     <StackPanel>
         <TextBlock>Nombre</TextBlock>
-        <TextBox></TextBox>
+        <TextBox x:Name="NombreTextBlock"
+                 Text="{Binding Path=Nombre}"></TextBox>
         <TextBlock>Edad</TextBlock>
-        <TextBox></TextBox>
+        <TextBox x:Name="EdadTextBlock"
+                 Text="{Binding Path=Edad}"></TextBox>
         <TextBlock>Nacionalidad</TextBlock>
         <StackPanel Orientation="Horizontal">
             <ComboBox ItemsSource="{Binding Path=Nacionalidades}"
+                      SelectedItem="{Binding Path=NacionalidadSeleccionada}"
                       Width="100"
                       Margin="10,0,0,0">
             </ComboBox>
@@ -33,6 +36,6 @@
                     Content=" + "
                     Command="{Binding Path=AddNacionalidadCommand}"></Button>
         </StackPanel>
-        <Button Width="150">Aceptar</Button>
+        <Button Command="{Binding Path=AddPersona}" Width="150">Aceptar</Button>
     </StackPanel>
 </UserControl>

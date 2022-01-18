@@ -13,7 +13,7 @@ namespace Personas.ViewModel
 {
     class ListadoPersonasVM : ObservableRecipient
     {
-        private readonly PersonaService servicio;
+        private readonly PersonaService servicio = new PersonaService();
         private ObservableCollection<Persona> personas;
         public ObservableCollection<Persona> Personas
         {
@@ -22,12 +22,11 @@ namespace Personas.ViewModel
         }
         public ListadoPersonasVM()
         {
-            servicio = new PersonaService();
             Personas = servicio.ObtenerDatos();
-           /* WeakReferenceMessenger.Default.Register<NuevaPersonaModificadaMessage>(this, (r, m) =>
+            WeakReferenceMessenger.Default.Register<NuevaPersonaModificadaMessage>(this, (r, m) =>
             {
                 Personas.Add(m.Value);
-            });*/
+            });
         }
     }
 }

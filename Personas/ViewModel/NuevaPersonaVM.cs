@@ -30,14 +30,36 @@ namespace Personas.ViewModel
             get { return nacionalidad; }
             set { SetProperty(ref nacionalidad, value); }
         }
+        private string nacionalidadSeleccionada;
+
+        public string NacionalidadSeleccionada
+        {
+            get { return nacionalidadSeleccionada; }
+            set { SetProperty(ref nacionalidadSeleccionada, value); }
+        }
+        private string nombre;
+        public string Nombre
+        {
+            get { return nombre; }
+            set { SetProperty(ref nombre, value); }
+        }
+        private int edad;
+        public int Edad
+        {
+            get { return edad; }
+            set { SetProperty(ref edad, value); }
+        }
+
 
         public RelayCommand AddNacionalidadCommand { get; }
+        public RelayCommand AddPersona { get; }
 
         public NuevaPersonaVM()
         {
             //control E V
             servicioNavegacion = new NavigationService();
             AddNacionalidadCommand = new RelayCommand(NuevaNacionalidad);
+            AddPersona = new RelayCommand(NuevaPersona);
             servicio = new PersonaService();
             Nacionalidades = new ObservableCollection<string>();
             ObservableCollection<Persona> personas = servicio.ObtenerDatos();
@@ -53,6 +75,13 @@ namespace Personas.ViewModel
                 Nacionalidades.Add(personas[i].Nacionalidad);
             }
 
+        }
+
+        private void NuevaPersona()
+        {
+            WeakReferenceMessenger.Default.Send(
+                new NuevaPersonaModificadaMessage(
+                    new Persona(Nombre, Edad, NacionalidadSeleccionada)));
         }
 
         private void NuevaNacionalidad()
