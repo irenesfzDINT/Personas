@@ -12,6 +12,7 @@ namespace Personas.Servicios
     class NavigationService
     {
         ListadoPersonas lista = new ListadoPersonas();
+        //NuevaPersona nuevaPersona = new NuevaPersona();
         public void AbrirDialogoNacionalidad()
         {
             DialogoNacionalidad dialogo = new DialogoNacionalidad();

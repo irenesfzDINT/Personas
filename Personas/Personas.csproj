@@ -81,6 +81,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Clases\Mensajes.cs" />
     <Compile Include="Clases\Persona.cs" />
     <Compile Include="Servicios\PersonaService.cs" />
     <Compile Include="UserControls\DatosPersona.xaml.cs">
@@ -92,6 +93,7 @@
     <Compile Include="Ventanas\DialogoNacionalidad.xaml.cs">
       <DependentUpon>DialogoNacionalidad.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\DialogoNacionalidadVM.cs" />
     <Compile Include="ViewModel\ListadoPersonasVM.cs" />
     <Compile Include="ViewModel\NuevaPersonaVM.cs" />
     <Page Include="UserControls\DatosPersona.xaml">

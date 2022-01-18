@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Personas.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,12 @@ namespace Personas.Ventanas
     /// </summary>
     public partial class DialogoNacionalidad : Window
     {
+        DialogoNacionalidadVM vm;
         public DialogoNacionalidad()
         {
+            vm = new DialogoNacionalidadVM();
             InitializeComponent();
+            this.DataContext = vm;
         }
 
         private void AceptarButton_Click(object sender, RoutedEventArgs e)
