@@ -25,5 +25,9 @@ namespace Personas.Servicios
         {
             return lista;
         }
+        public UserControl AbrirUC3()
+        {
+            return new DatosPersona();
+        }
     }
 }

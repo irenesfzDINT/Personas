@@ -1,6 +1,7 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 using Personas.Servicios;
+using System;
 using System.Windows.Controls;
 
 namespace Personas.ViewModel
@@ -9,6 +10,7 @@ namespace Personas.ViewModel
     {
         public RelayCommand AbrirUC1Command { get; }
         public RelayCommand AbrirUC2Command { get; }
+        public RelayCommand AbrirUC3Command { get; }
         private readonly NavigationService servicio;
         private UserControl opcion;
         public UserControl Opcion
@@ -22,6 +24,12 @@ namespace Personas.ViewModel
             servicio = new NavigationService();
             AbrirUC1Command = new RelayCommand(AbrirUC1);
             AbrirUC2Command = new RelayCommand(AbrirUC2);
+            AbrirUC3Command = new RelayCommand(AbrirUC3);
+        }
+
+        private void AbrirUC3()
+        {
+            Opcion = servicio.AbrirUC3();
         }
 
         private void AbrirUC2()

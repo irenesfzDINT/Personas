@@ -23,6 +23,7 @@
                     DockPanel.Dock="Top">
             <Button Command="{Binding AbrirUC1Command}">Nueva persona</Button>
             <Button Command="{Binding AbrirUC2Command}">Listado de personas</Button>
+            <Button Command="{Binding AbrirUC3Command}">Consulta persona</Button>
         </StackPanel>
         <Border BorderThickness="2"
                 BorderBrush="Black"
