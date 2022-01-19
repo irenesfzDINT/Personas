@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:inputLayout="clr-namespace:Syncfusion.UI.Xaml.TextInputLayout;assembly=Syncfusion.SfTextInputLayout.WPF"
              xmlns:local="clr-namespace:Personas"
              mc:Ignorable="d"
              d:DesignHeight="450"
@@ -16,26 +17,64 @@
             <Setter Property="Margin"
                     Value="10,15,0,0"></Setter>
         </Style>
+        <Style TargetType="{x:Type inputLayout:SfTextInputLayout}">
+            <Setter Property="Margin"
+                    Value="0,20,10,10"></Setter>
+        </Style>
     </UserControl.Resources>
-    <StackPanel>
-        <TextBlock>Nombre</TextBlock>
-        <TextBox x:Name="NombreTextBlock"
-                 Text="{Binding Path=NuevaPersonaObj.Nombre}"></TextBox>
-        <TextBlock>Edad</TextBlock>
+    <StackPanel Margin="10">
+        <inputLayout:SfTextInputLayout Hint="Nombre"
+                                       HelperText="Nombre de la persona"
+                                       LeadingViewPosition="Outside">
+            <TextBox x:Name="NombreTextBlock"
+                     Text="{Binding Path=NuevaPersonaObj.Nombre}" />
+            <inputLayout:SfTextInputLayout.LeadingView>
+                <Image Source="/Assets/person.png">
+                </Image>
+            </inputLayout:SfTextInputLayout.LeadingView>
+        </inputLayout:SfTextInputLayout>
+        <!-- <TextBox x:Name="NombreTextBlock"
+                 Text="{Binding Path=NuevaPersonaObj.Nombre}"></TextBox>-->
+        <inputLayout:SfTextInputLayout Hint="Edad"
+                                       HelperText="Edad de la persona"
+                                       LeadingViewPosition="Outside">
+            <TextBox x:Name="EdadTextBlock"
+                     Text="{Binding Path=NuevaPersonaObj.Edad}" />
+            <inputLayout:SfTextInputLayout.LeadingView>
+                <Image Source="/Assets/cake.png">
+                </Image>
+            </inputLayout:SfTextInputLayout.LeadingView>
+        </inputLayout:SfTextInputLayout>
+        <!--<TextBlock>Edad</TextBlock>
         <TextBox x:Name="EdadTextBlock"
-                 Text="{Binding Path=NuevaPersonaObj.Edad}"></TextBox>
-        <TextBlock>Nacionalidad</TextBlock>
+                 Text="{Binding Path=NuevaPersonaObj.Edad}"></TextBox>-->
         <StackPanel Orientation="Horizontal">
-            <ComboBox ItemsSource="{Binding Path=Nacionalidades}"
+            <inputLayout:SfTextInputLayout HorizontalAlignment="Left"
+                                           Width="250"
+                                           Hint="Nacionalidad"
+                                           HelperText="Nacionalidad de la persona"
+                                           LeadingViewPosition="Outside">
+                <ComboBox ItemsSource="{Binding Path=Nacionalidades}"
+                          SelectedItem="{Binding Path=NuevaPersonaObj.Nacionalidad}"
+                          Margin="10,0,0,0">
+                </ComboBox>
+                <inputLayout:SfTextInputLayout.LeadingView>
+                    <Image Source="/Assets/world.png">
+                    </Image>
+                </inputLayout:SfTextInputLayout.LeadingView>
+            </inputLayout:SfTextInputLayout>
+            <!--<ComboBox ItemsSource="{Binding Path=Nacionalidades}"
                       SelectedItem="{Binding Path=NuevaPersonaObj.Nacionalidad}"
                       Width="100"
                       Margin="10,0,0,0">
-            </ComboBox>
-            <Button Margin="5,0,0,0"
-                    Width="20"
+            </ComboBox>-->
+            <Button Margin="0,0,0,20"
+                    Width="30"
+                    Height="30"
                     Content=" + "
                     Command="{Binding Path=AddNacionalidadCommand}"></Button>
         </StackPanel>
-        <Button Command="{Binding Path=AddPersona}" Width="150">Aceptar</Button>
+        <Button Command="{Binding Path=AddPersona}"
+                Width="150">Aceptar</Button>
     </StackPanel>
 </UserControl>
