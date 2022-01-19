@@ -20,14 +20,14 @@
     <StackPanel>
         <TextBlock>Nombre</TextBlock>
         <TextBox x:Name="NombreTextBlock"
-                 Text="{Binding Path=Nombre}"></TextBox>
+                 Text="{Binding Path=NuevaPersonaObj.Nombre}"></TextBox>
         <TextBlock>Edad</TextBlock>
         <TextBox x:Name="EdadTextBlock"
-                 Text="{Binding Path=Edad}"></TextBox>
+                 Text="{Binding Path=NuevaPersonaObj.Edad}"></TextBox>
         <TextBlock>Nacionalidad</TextBlock>
         <StackPanel Orientation="Horizontal">
             <ComboBox ItemsSource="{Binding Path=Nacionalidades}"
-                      SelectedItem="{Binding Path=NacionalidadSeleccionada}"
+                      SelectedItem="{Binding Path=NuevaPersonaObj.Nacionalidad}"
                       Width="100"
                       Margin="10,0,0,0">
             </ComboBox>

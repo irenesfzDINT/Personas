@@ -23,31 +23,13 @@ namespace Personas.ViewModel
             get { return nacionalidades; }
             set { SetProperty(ref nacionalidades, value); }
         }
-        private string nacionalidad;
 
-        public string Nacionalidad
-        {
-            get { return nacionalidad; }
-            set { SetProperty(ref nacionalidad, value); }
-        }
-        private string nacionalidadSeleccionada;
+        private Persona nuevaPersonaObj;
 
-        public string NacionalidadSeleccionada
+        public Persona NuevaPersonaObj
         {
-            get { return nacionalidadSeleccionada; }
-            set { SetProperty(ref nacionalidadSeleccionada, value); }
-        }
-        private string nombre;
-        public string Nombre
-        {
-            get { return nombre; }
-            set { SetProperty(ref nombre, value); }
-        }
-        private int edad;
-        public int Edad
-        {
-            get { return edad; }
-            set { SetProperty(ref edad, value); }
+            get { return nuevaPersonaObj; }
+            set { SetProperty(ref nuevaPersonaObj, value); }
         }
 
 
@@ -56,6 +38,7 @@ namespace Personas.ViewModel
 
         public NuevaPersonaVM()
         {
+            NuevaPersonaObj = new Persona();
             //control E V
             servicioNavegacion = new NavigationService();
             AddNacionalidadCommand = new RelayCommand(NuevaNacionalidad);
@@ -79,8 +62,7 @@ namespace Personas.ViewModel
         private void NuevaPersona()
         {
             WeakReferenceMessenger.Default.Send(
-                new NuevaPersonaModificadaMessage(
-                    new Persona(Nombre, Edad, NacionalidadSeleccionada)));
+                new NuevaPersonaModificadaMessage(NuevaPersonaObj));
         }
 
         private void NuevaNacionalidad()
