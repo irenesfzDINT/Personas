@@ -19,14 +19,13 @@ namespace Personas.ViewModel
             get { return textoNacionalidad; }
             set { SetProperty(ref textoNacionalidad, value); }
         }
-        public RelayCommand NuevaNacionalidadCommand { get; }
 
         public DialogoNacionalidadVM()
         {
-            NuevaNacionalidadCommand = new RelayCommand(NuevaNacionalidad);
+            
         }
 
-        private void NuevaNacionalidad()
+        public void NuevaNacionalidad()
         {
             //envia datos
             WeakReferenceMessenger.Default.Send(new NacionalidadModificadaMessage(TextoNacionalidad));

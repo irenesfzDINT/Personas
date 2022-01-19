@@ -35,7 +35,7 @@ namespace Personas.ViewModel
             {
                 m.Reply(r.PersonaSeleccionada);
             });
-
+            PersonaSeleccionada = new Persona();
             Personas = servicio.ObtenerDatos();
             WeakReferenceMessenger.Default.Register<NuevaPersonaModificadaMessage>(this, (r, m) =>
             {

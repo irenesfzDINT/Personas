@@ -31,6 +31,7 @@ namespace Personas.Ventanas
         private void AceptarButton_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
+            vm.NuevaNacionalidad();
         }
     }
 }

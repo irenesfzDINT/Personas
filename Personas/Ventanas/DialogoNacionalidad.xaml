@@ -26,7 +26,6 @@
         <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Right">
             <Button x:Name="AceptarButton"
-                    Command="{Binding Path=NuevaNacionalidadCommand}"
                     Click="AceptarButton_Click"
                     IsDefault="True">Aceptar</Button>
             <Button IsCancel="True">Cancelar</Button>
