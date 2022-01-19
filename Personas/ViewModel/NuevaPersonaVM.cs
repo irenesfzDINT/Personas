@@ -36,16 +36,17 @@ namespace Personas.ViewModel
         public RelayCommand AddNacionalidadCommand { get; }
         public RelayCommand AddPersona { get; }
 
+
         public NuevaPersonaVM()
         {
             NuevaPersonaObj = new Persona();
-            //control E V
             servicioNavegacion = new NavigationService();
+            
+            //comandos
             AddNacionalidadCommand = new RelayCommand(NuevaNacionalidad);
             AddPersona = new RelayCommand(NuevaPersona);
-            servicio = new PersonaService();
             Nacionalidades = new ObservableCollection<string>();
-            ObservableCollection<Persona> personas = servicio.ObtenerDatos();
+            
             //suscriptor
             WeakReferenceMessenger.Default.Register<NacionalidadModificadaMessage>
             (this, (r, m) =>
@@ -53,6 +54,9 @@ namespace Personas.ViewModel
                 Nacionalidades.Add(m.Value);
             });
 
+            //obtengo nacionalidades a partir de objetos Persona creados
+            servicio = new PersonaService();
+            ObservableCollection<Persona> personas = servicio.ObtenerDatos();
             for (int i = 0; i < personas.Count; i++)
             {
                 Nacionalidades.Add(personas[i].Nacionalidad);

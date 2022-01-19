@@ -9,7 +9,6 @@ namespace Personas.Clases
 {
     class Mensajes
     {
-        public class NacionalidadRequestMessage : RequestMessage<string> { }
         public class NacionalidadModificadaMessage : ValueChangedMessage<string>
         {
             public NacionalidadModificadaMessage(string nacionalidad) : base(nacionalidad) { }

@@ -11,34 +11,20 @@ namespace Personas.ViewModel
 {
     class DatosPersonaVM : ObservableRecipient
     {
-        private string nombre;
+        private Persona personaSeleccionada;
 
-        public string Nombre
+        public Persona PersonaSeleccionada
         {
-            get { return nombre; }
-            set { SetProperty(ref nombre, value); }
+            get { return personaSeleccionada; }
+            set { SetProperty(ref personaSeleccionada, value); }
         }
-        private int edad;
 
-        public int Edad
-        {
-            get { return edad; }
-            set { SetProperty(ref edad, value); }
-        }
-        private string nacionalidad;
-
-        public string Nacionalidad
-        {
-            get { return nacionalidad; }
-            set { SetProperty(ref nacionalidad, value); }
-        }
 
         public DatosPersonaVM()
         {
-            Persona p = WeakReferenceMessenger.Default.Send<PersonaSeleccionadaRequestMessage>();
-            Nombre = p.Nombre;
-            Edad = p.Edad;
-            Nacionalidad = p.Nacionalidad;
+            //PersonaSeleccionada = new Persona();
+            //Solicita persona seleccionada
+            PersonaSeleccionada = WeakReferenceMessenger.Default.Send<PersonaSeleccionadaRequestMessage>();
         }
     }
 }

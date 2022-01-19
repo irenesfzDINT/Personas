@@ -13,7 +13,7 @@ namespace Personas.ViewModel
 {
     class ListadoPersonasVM : ObservableRecipient
     {
-        private readonly PersonaService servicio = new PersonaService();
+        private readonly PersonaService servicio;
         private Persona personaSeleccionada;
 
         public Persona PersonaSeleccionada
@@ -30,17 +30,23 @@ namespace Personas.ViewModel
         }
         public ListadoPersonasVM()
         {
-            //cuando selecciona persona
-            WeakReferenceMessenger.Default.Register<ListadoPersonasVM, PersonaSeleccionadaRequestMessage>(this, (r, m) =>
+            PersonaSeleccionada = new Persona();
+            servicio = new PersonaService();
+            Personas = servicio.ObtenerDatos();
+            //Manda la persona seleccionada
+            WeakReferenceMessenger.Default.Register<ListadoPersonasVM, PersonaSeleccionadaRequestMessage>
+            (this, (r, m) =>
             {
                 m.Reply(r.PersonaSeleccionada);
             });
-            PersonaSeleccionada = new Persona();
-            Personas = servicio.ObtenerDatos();
-            WeakReferenceMessenger.Default.Register<NuevaPersonaModificadaMessage>(this, (r, m) =>
+
+            //se suscribe
+            WeakReferenceMessenger.Default.Register<NuevaPersonaModificadaMessage>
+            (this, (r, m) =>
             {
                 Personas.Add(m.Value);
             });
+
         }
     }
 }
