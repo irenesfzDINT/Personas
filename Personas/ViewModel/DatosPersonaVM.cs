@@ -23,6 +23,7 @@ namespace Personas.ViewModel
         public DatosPersonaVM()
         {
             //Solicita persona seleccionada
+            PersonaSeleccionada = new Persona();
             PersonaSeleccionada = WeakReferenceMessenger.Default.Send<PersonaSeleccionadaRequestMessage>();
         }
     }

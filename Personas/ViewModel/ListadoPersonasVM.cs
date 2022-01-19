@@ -33,6 +33,7 @@ namespace Personas.ViewModel
         {
             servicio = new PersonaService();
             Personas = servicio.ObtenerDatos();
+            PersonaSeleccionada = new Persona();
             //Manda la persona seleccionada
             WeakReferenceMessenger.Default.Register<ListadoPersonasVM, PersonaSeleccionadaRequestMessage>
             (this, (r, m) =>
