@@ -14,6 +14,7 @@ namespace Personas.ViewModel
     class ListadoPersonasVM : ObservableRecipient
     {
         private readonly PersonaService servicio;
+        //Selected item
         private Persona personaSeleccionada;
 
         public Persona PersonaSeleccionada
@@ -30,7 +31,6 @@ namespace Personas.ViewModel
         }
         public ListadoPersonasVM()
         {
-            PersonaSeleccionada = new Persona();
             servicio = new PersonaService();
             Personas = servicio.ObtenerDatos();
             //Manda la persona seleccionada
