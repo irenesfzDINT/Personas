@@ -16,7 +16,7 @@ namespace Personas
         public App()
         {
             //Register Syncfusion license
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NTY2OTI3QDMxMzkyZTM0MmUzMG85Q0toWFI2U2dGcVIwdjlXRHBDVGlHanpxZFlWVEJLcnZWUWtuSE5EekU9");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Personas.Properties.Settings.Default.licencia);
         }
     }
 }

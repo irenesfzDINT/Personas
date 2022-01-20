@@ -31,5 +31,15 @@ namespace Personas.Properties {
                 return ((string)(this["version"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("NTY2OTI3QDMxMzkyZTM0MmUzMG85Q0toWFI2U2dGcVIwdjlXRHBDVGlHanpxZFlWVEJLcnZWUWtuSE5Ee" +
+            "kU9")]
+        public string licencia {
+            get {
+                return ((string)(this["licencia"]));
+            }
+        }
     }
 }
